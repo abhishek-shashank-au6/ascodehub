@@ -1,22 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ownNav">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse navbar-right navbar-main-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li><a href='/' class="nav-link">Home</a></li>
+      <li class="nav-item"><a href='/' class="nav-link">Home</a></li>
       {{#if userCustomId}}
-      <li><a href='/dashboard' class="nav-link">Dashboard</a></li>
-      <li>
+      <li class="nav-item"><a href='/dashboard' class="nav-link">Dashboard</a></li>
+      <li class="nav-item">
         <form method='POST' action='/logout?_method=DELETE'>
           <input type='submit' value='Logout'>
         </form>
       </li>
       {{else}}
-      <li class="nav-item login">
+      <li class="nav-item">
         <a class="nav-link" href="/login">Sign in</a>
       </li>
-      <li  class="nav-item register">
+      <li  class="nav-item">
         <a class="nav-link" href="/register">Register</a>
       </li>
       {{/if}}
