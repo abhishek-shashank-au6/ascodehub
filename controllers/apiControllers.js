@@ -55,7 +55,9 @@ module.exports = {
 
     async createShortenedUrl (req,res) {
       try{
-        await ShortUrl.create({ full: req.body.fullUrl })
+        const user = req.user
+        await ShortUrl.create({full: req.body.fullUrl, user: user._id})
+        await User.findOneAndUpdate({id: user._id}, {$push: {urls: ShortUrl._id}})
         res.redirect('/dashboard')
       }
       catch(err){

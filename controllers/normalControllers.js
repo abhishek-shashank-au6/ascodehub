@@ -26,7 +26,7 @@ module.exports = {
     async renderDashboardPage (req,res) {
       try{
         const user = req.user
-      const shortUrls = await ShortUrl.find({user: req.user._id})
+        const shortUrls = await ShortUrl.find({user: req.user._id})
         res.render('dashboard', {
             title: 'Dashboard',
             userId: user.id,
