@@ -1,8 +1,8 @@
-var mongoose = require('mongoose')
-var bcrypt = require('bcryptjs')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
+const Schema = mongoose.Schema
 
-var userSchema = new Schema(
+const userSchema = new Schema(
   {
     name: {
         type: String,
@@ -20,10 +20,12 @@ var userSchema = new Schema(
         required: true,
         trim: true
     },
-    accessToken: { 
-        type: String, 
-        trim: true
-    }
+    urls: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "ShortUrl"
+      }
+    ]
   },
   { timestamps: true }
 )

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const shortId = require('shortid')
+const Schema = mongoose.Schema
 
 const shortUrlSchema = new mongoose.Schema({
   full: {
@@ -15,6 +16,10 @@ const shortUrlSchema = new mongoose.Schema({
     type: Number,
     required: true,
     default: 0
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "user"
   }
 })
 
