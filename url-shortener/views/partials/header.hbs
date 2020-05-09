@@ -1,0 +1,16 @@
+<div class='header'>
+  <ul>
+    <li><a href='/'>Home</a></li>
+    {{#if userCustomId}}
+    <li><a href='/dashboard'>Dashboard</a></li>
+    <li>
+      <form method='POST' action='/logout?_method=DELETE'>
+        <input type='submit' value='Logout'>
+      </form>
+    </li>
+    {{else}}
+    <li><a href='/login'>Login</a></li>
+    <li><a href='/register'>Register</a></li>
+    {{/if}}
+  </ul>
+</div>
